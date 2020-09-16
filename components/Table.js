@@ -1,7 +1,7 @@
 import TableHeader from '../components/TableHeader';
-import TableCell from '../components/TableCell';
+import TableRow from '../components/TableRow';
 
-export default function Table({ rows, cols, currentlyEditing, setCurrentlyEditing, expressions }) {
+export default function Table({ rows, cols, currentlyEditing, setCurrentlyEditing, expressions, getTruthValues }) {
 
     const tableHeaders = [...Array(cols).keys()].map(indx => (
         <TableHeader
@@ -13,17 +13,8 @@ export default function Table({ rows, cols, currentlyEditing, setCurrentlyEditin
         />
     ));
 
-    const colEls = [...Array(cols).keys()].map(indx => (
-        <TableCell key={indx} />
-    ));
-
     const rowEls = [...Array(rows).keys()].map(indx => (
-        <tr
-            key={indx}
-            className=''
-        >
-            {colEls}
-        </tr>
+        <TableRow key={indx} rowId={indx} cols={cols} getTruthValues={getTruthValues} />
     ));
     return (
         <table className='table-auto mt-6'>
