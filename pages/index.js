@@ -8,7 +8,7 @@ export default function Home() {
   const [cols, setCols] = useState(2);
   const [expressions, setExpressions] = useState([]);
   const [truthValues, setTruthValues] = useState([]);
-  const [currentlyEditing, setCurrentlyEditing] = useState(null);
+  const [currentlyEditing, setCurrentlyEditing] = useState(0);
   const [latex, setLatex] = useState('');
   const textAreaRef = useRef(null);
 
