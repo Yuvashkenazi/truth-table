@@ -217,7 +217,7 @@ export default function Home() {
                   setCols(cols + 1);
                 }
               }}>
-              <span className='text-white text-bold text-4xl mb-2'>+</span>
+              <span className='text-white text-bold text-4xl sm:mb-2 mb-1'>+</span>
             </span>
           </div>
           <div className='ml-2 mt-4'>
@@ -228,7 +228,7 @@ export default function Home() {
                   setRows(rows + 1);
                 }
               }}>
-              <span className='text-white text-bold text-4xl mb-2'>+</span>
+              <span className='text-white text-bold text-4xl sm:mb-2 mb-1'>+</span>
             </span>
           </div>
         </div>
