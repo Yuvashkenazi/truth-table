@@ -14,7 +14,8 @@ module.exports = {
     extend: {},
   },
   variants: {
-    borderWidth: ['responsive, hover, focus, active']
+    borderWidth: ['responsive, hover, focus, active'],
+    cursor: ['responsive, hover, focus, active']
   },
   plugins: [],
 }

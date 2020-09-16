@@ -4,7 +4,7 @@ import Table from '../components/Table';
 import Toolbar from '../components/Toolbar';
 
 export default function Home() {
-  const [rows, setRows] = useState(2);
+  const [rows, setRows] = useState(4);
   const [cols, setCols] = useState(2);
   const [expressions, setExpressions] = useState([]);
   const [currentlyEditing, setCurrentlyEditing] = useState(null);
@@ -140,14 +140,28 @@ export default function Home() {
         </div>
 
 
-        <div className=''>
-          <Table
-            rows={rows}
-            cols={cols}
-            currentlyEditing={currentlyEditing}
-            setCurrentlyEditing={setCurrentlyEditing}
-            expressions={expressions}
-          />
+        <div className='flex flex-col'>
+          <div className='flex'>
+            <Table
+              rows={rows}
+              cols={cols}
+              currentlyEditing={currentlyEditing}
+              setCurrentlyEditing={setCurrentlyEditing}
+              expressions={expressions}
+            />
+            <span
+              className='bg-blue-500 hover:bg-blue-700 hover:cursor-pointer rounded-full w-8 h-8 flex justify-center items-center ml-4 my-auto'
+              onClick={() => setCols(cols + 1)}>
+              <span className='text-white text-bold text-4xl mb-1'>+</span>
+            </span>
+          </div>
+          <div className='ml-2 mt-4'>
+            <span
+              className='bg-blue-500 hover:bg-blue-700 hover:cursor-pointer rounded-full w-8 h-8 flex justify-center items-center'
+              onClick={() => setRows(rows + 1)}>
+              <span className='text-white text-bold text-4xl mb-1'>+</span>
+            </span>
+          </div>
         </div>
 
         {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10">
