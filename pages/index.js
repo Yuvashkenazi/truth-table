@@ -145,12 +145,12 @@ export default function Home() {
       </Head>
 
       <main className='container mx-auto mt-10 select-none'>
-        <p className='text-white text-3xl tracking-tighter font-semibold'>Truth Table Generator</p>
+        <p className='text-white text-3xl tracking-tighter font-semibold px-4'>Truth Table Generator</p>
 
 
-        <div className='flex mt-4'>
-          <div className='flex flex-col justify-evenly w-40 rounded border px-4'>
-            <div className='flex items-center'>
+        <div className='flex sm:flex-row flex-col mt-4 px-4'>
+          <div className='flex flex-col justify-evenly w-40 rounded border px-4 sm:py-0 py-4'>
+            <div className='flex items-center sm:mb-0 mb-4'>
               <div className='w-1/2'>
                 <label className='block text-white font-bold text-center' htmlFor='rows'>
                   Rows
@@ -188,7 +188,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='ml-6'>
+          <div className='sm:ml-6 sm:mt-0 mt-4'>
             <Toolbar
               upateExpression={upateExpression}
               backspace={backspace}
@@ -200,7 +200,7 @@ export default function Home() {
         </div>
 
 
-        <div className='flex flex-col'>
+        <div className='flex flex-col px-4'>
           <div className='flex'>
             <Table
               rows={rows}
@@ -233,7 +233,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='w-3/4'>
+        <div className='w-3/4 px-4'>
           <div className='flex justify-between'>
             <p className='text-white text-2xl tracking-tighter font-semibold mt-10 mb-1'>LaTeX</p>
             <button
