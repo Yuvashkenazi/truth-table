@@ -94,6 +94,10 @@ export default function Home() {
 
     const found = expressions.find(expression => expression.col === currentlyEditing);
 
+    if (!found) {
+      return;
+    }
+
     const newExpression = found.expression.split(' ');
 
     newExpression.splice(-2, 2);
@@ -111,13 +115,17 @@ export default function Home() {
     }
 
     const found = expressions.find(expression => expression.col === currentlyEditing);
-    if (found) {
-      const newState = expressions.filter(expression => expression.col !== currentlyEditing);
 
-      newState.push(Object.assign({ expression: '' }, { col: currentlyEditing }));
-
-      setExpressions(newState);
+    if (!found) {
+      return;
     }
+
+    const newState = expressions.filter(expression => expression.col !== currentlyEditing);
+
+    newState.push(Object.assign({ expression: '' }, { col: currentlyEditing }));
+
+    setExpressions(newState);
+
   }
 
   const done = () => {
@@ -211,6 +219,7 @@ export default function Home() {
               getTruthValues={getTruthValues}
             />
             <span
+              title='Add column'
               className='bg-blue-500 hover:bg-blue-700 hover:cursor-pointer rounded-full w-8 h-8 flex justify-center items-center ml-4 my-auto'
               onClick={() => {
                 if (cols < 16) {
@@ -222,6 +231,7 @@ export default function Home() {
           </div>
           <div className='ml-2 mt-4'>
             <span
+              title='Add row'
               className='bg-blue-500 hover:bg-blue-700 hover:cursor-pointer rounded-full w-8 h-8 flex justify-center items-center'
               onClick={() => {
                 if (rows < 16) {
@@ -237,6 +247,7 @@ export default function Home() {
           <div className='flex justify-between'>
             <p className='text-white text-2xl tracking-tighter font-semibold mt-10 mb-1'>LaTeX</p>
             <button
+              title='Copy'
               onClick={handleCopy}
               className='text-white self-end border rounded px-1 hover:bg-gray-600 mb-2'>
               <svg className='w-5 h-5' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
